@@ -25,6 +25,5 @@ import numpy as np
 
 class Chebyshev(object):
 
-    def __call__(self, resolution):
-        chebyshev = np.cos(np.pi * np.arange(resolution) / (resolution - 1))
-        return (chebyshev * 0.5 + 0.5)[::-1]
+    def __call__(self, n):
+        return (np.cos(np.arange(n) / (n - 1) * np.pi) * 0.5 + 0.5)[::-1]
