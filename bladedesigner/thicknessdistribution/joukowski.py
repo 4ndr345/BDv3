@@ -35,4 +35,4 @@ class Joukowski(object):
     def as_array(self):
         x = self.distribution(self.resolution)
         y = self.max_thickness * 1.5396007178 * x[::-1] * np.sqrt(x[::-1] * x)
-        return np.reshape(np.append(x, y), (-1, 2), 'F')
+        return np.append(x[:, None], y[:, None], axis=1)
